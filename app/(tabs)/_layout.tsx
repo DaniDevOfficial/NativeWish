@@ -1,10 +1,8 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
+import { MaterialCommunityIcons } from '@expo/vector-icons';import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
-
+import { MaterialIcons } from '@expo/vector-icons';
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
@@ -19,17 +17,15 @@ export default function TabLayout() {
         options={{
           title: 'Home',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
-          ),
+            <MaterialCommunityIcons name="pokemon-go" size={24} color="black" />),
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="pokewish"
         options={{
-          title: 'Explore',
+          title: 'PokéWish',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
-          ),
+            <MaterialIcons name="catching-pokemon" size={24} color="black" />),
         }}
       />
     </Tabs>
