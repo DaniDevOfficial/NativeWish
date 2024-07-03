@@ -1,50 +1,58 @@
-# Welcome to your Expo app 👋
+# PokéWish
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+PokéWish is a simple expo app that allows you to look at the Pokédex via the PokéAPI. There are also some additional features native to phones like vibrations and shaking. 
 
-## Get started
+## Installation
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+To install the app, you need to have the expo-cli installed. You can install it via npm:
 
 ```bash
-npm run reset-project
+npm install -g expo-cli
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+After that, you can clone the repository and install the dependencies:
 
-## Learn more
+```bash
+git clone <Link>
 
-To learn more about developing your project with Expo, look at the following resources:
+cd PokéWish
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+npm install
+```
 
-## Join the community
+## Usage
 
-Join our community of developers creating universal apps.
+To start the app, you can use the following command:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+expo start
+```
+Scan the QR Code with the Expo go app or look at the app in the browser.
+
+
+## Features
+
+### Pokémon API 
+The app uses the PokéAPI to get the data for the Pokédex. You can look at the Pokémon and their stats. 
+
+### Vibration
+The app is able to vibrate the phone. You can trigger the vibration by pressing the next in the app. This is so you can feel a response when you press the button.
+
+### Shake
+The app can also detect when you shake the phone. This is used to trigger the next pokemon.
+
+### Sound (comming soon)
+
+
+
+
+
+## Contributing
+
+- only me no need to contribute 😱😱😱😱
+
+
+## Sources
+
+
+<a href="https://www.flaticon.com/de/kostenlose-icons/pokemon" title="pokémon Icons">Pokémon Icons erstellt von Freepik - Flaticon</a>
