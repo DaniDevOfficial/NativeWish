@@ -1,45 +1,33 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Image} from 'react-native';
 
 import { useEffect, useState } from 'react';
 import { fetchPokemonByNumber } from '@/api/api';
 import { PokemonDetails } from '@/types/types';
 import { PokemonType } from '@/components/selfmade/PokemonType';
 import { ThemedText } from '@/components/ThemedText';
+import { PokeImage } from '@/components/selfmade/PokeImage';
 
 export default function TabTwoScreen() {
   const [PokeData, setPokeData] = useState<PokemonDetails | null>(null);
+  async function fetching() {
+    const randInt = Math.floor(Math.random() * 898) + 1;
+    const pokeDataTMP: PokemonDetails = await fetchPokemonByNumber(randInt)
+    console.log(randInt)
+    console.log(pokeDataTMP)
+    setPokeData(pokeDataTMP)
+  }
   useEffect(() => {
-    async function fetching() {
-      const randInt = Math.floor(Math.random() * 898) + 1;
-      const pokeDataTMP: PokemonDetails = await fetchPokemonByNumber(randInt)
-      console.log(randInt)
-      console.log(pokeDataTMP)
-      setPokeData(pokeDataTMP)
-    }
     fetching()
-
   }, [])
+   
   return (
     <>
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <PokemonType type="bug" />
-        <PokemonType type="dark" />
-        <PokemonType type="dragon" />
-        <PokemonType type="electric" />
-        <PokemonType type="fairy" />
-        <PokemonType type="fighting" />
-        <PokemonType type="fire" />
-        <PokemonType type="flying" />
-        <PokemonType type="ghost" />
-        <PokemonType type="grass" />
-        <PokemonType type="ground" />
-        <PokemonType type="ice" />
-        <PokemonType type="normal" />
-        <PokemonType type="poison" />
-        <PokemonType type="psychic" />
-        <PokemonType type="rock" />
-        <PokemonType type="steel" />
-        <PokemonType type="water" />
+        <ThemedText type="title">{PokeData?.name}</ThemedText>
+        <PokeImage imageUri={PokeData?.image} soundUri={PokeData?.cries} />
+        {PokeData?.types.map((type, index) => (
+          <PokemonType key={index} type={type} />
+        ))}
       </View>
     </>
 
@@ -56,5 +44,9 @@ const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: 'row',
     gap: 8,
+  },
+  pokeImage: { 
+    width: 200, 
+    height: 200 
   },
 });
