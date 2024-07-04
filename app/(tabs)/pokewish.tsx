@@ -6,6 +6,9 @@ import { PokemonDetails } from '@/types/types';
 import { PokemonType } from '@/components/selfmade/PokemonType';
 import { ThemedText } from '@/components/ThemedText';
 import { PokeImage } from '@/components/selfmade/PokeImage';
+import { PokeStat } from '@/components/selfmade/PokeStats';
+
+
 
 export default function TabTwoScreen() {
   const [PokeData, setPokeData] = useState<PokemonDetails | null>(null);
@@ -24,9 +27,13 @@ export default function TabTwoScreen() {
     <> 
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <ThemedText type="title">{PokeData?.name}</ThemedText>
-        <PokeImage imageUri={PokeData?.image} soundUri={PokeData?.cries} />
+        <PokeImage imageUri={PokeData?.image} soundUri={PokeData?.cries} />  
+        <ThemedText type="subtitle">Weight: {PokeData?.weight} kg</ThemedText>
         {PokeData?.types.map((type, index) => (
           <PokemonType key={index} type={type} />
+        ))}
+        {PokeData?.stats.map((stat, index) => (
+          <PokeStat key={index} name={stat.name} value={stat.statValue} />
         ))}
       </View>
     </>

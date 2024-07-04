@@ -22,7 +22,7 @@ function formatData(data: PokemonFetchData) {
     const formattedData = {
         name: capitalizeFirstLetter(data.name),
         image: data.sprites.front_default,
-        weight: data.weight,
+        weight: data.weight / 10,
         stats: data.stats.map(stat => ({
             name: capitalizeFirstLetter(stat.stat.name),
             statValue: stat.base_stat

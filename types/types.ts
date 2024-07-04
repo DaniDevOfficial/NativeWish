@@ -25,7 +25,7 @@ interface Sprites {
 export interface PokemonFetchData {
     cries: PokemonCries;
     sprites: Sprites
-    name: string | null;
+    name: string;
     image: string;
     stats: PokemonStatFetch[];
     types: PokemonType[];
@@ -33,9 +33,9 @@ export interface PokemonFetchData {
 }
 
 export interface PokemonDetails {
-    cries: string | null;
+    cries: string;
     name: string;
-    image: string | null;
+    image: string;
     stats: PokemonStat[];
     types: string[];
     weight: number;

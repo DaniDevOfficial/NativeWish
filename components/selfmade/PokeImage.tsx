@@ -4,8 +4,8 @@ import { Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { Audio } from 'expo-av';
 
 type PokeImageProps = {
-  imageUri: string | null;
-  soundUri: string | null;
+  imageUri: string | null | undefined;
+  soundUri: string | null | undefined ;
 };
 
 const defaultSoundUri = 'https://firebasestorage.googleapis.com/v0/b/funnysoundswish.appspot.com/o/Sounds%2FMySounds%2Fel-primo-made-with-Voicemod-technology.mp3?alt=media&token=3f1a182d-1a41-4e2c-b430-40dd054ed54c';
