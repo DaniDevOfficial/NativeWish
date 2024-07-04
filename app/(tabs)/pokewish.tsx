@@ -1,31 +1,46 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { StyleSheet, Image, Platform } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { fetchPokemonByNumber } from '@/api/api';
 import { PokemonDetails } from '@/types/types';
+import { PokemonType } from '@/components/selfmade/PokemonType';
+import { ThemedText } from '@/components/ThemedText';
 
 export default function TabTwoScreen() {
+  const [PokeData, setPokeData] = useState<PokemonDetails | null>(null);
   useEffect(() => {
     async function fetching() {
-
       const randInt = Math.floor(Math.random() * 898) + 1;
-      const pokeData: PokemonDetails = await fetchPokemonByNumber(randInt)
+      const pokeDataTMP: PokemonDetails = await fetchPokemonByNumber(randInt)
       console.log(randInt)
-      console.log(pokeData)
+      console.log(pokeDataTMP)
+      setPokeData(pokeDataTMP)
     }
     fetching()
 
-  })
+  }, [])
   return (
     <>
-
-
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <PokemonType type="bug" />
+        <PokemonType type="dark" />
+        <PokemonType type="dragon" />
+        <PokemonType type="electric" />
+        <PokemonType type="fairy" />
+        <PokemonType type="fighting" />
+        <PokemonType type="fire" />
+        <PokemonType type="flying" />
+        <PokemonType type="ghost" />
+        <PokemonType type="grass" />
+        <PokemonType type="ground" />
+        <PokemonType type="ice" />
+        <PokemonType type="normal" />
+        <PokemonType type="poison" />
+        <PokemonType type="psychic" />
+        <PokemonType type="rock" />
+        <PokemonType type="steel" />
+        <PokemonType type="water" />
+      </View>
     </>
 
   );
