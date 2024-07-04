@@ -1,5 +1,5 @@
 export interface PokemonCries {
-        legacy: string
+    latest: string
 
 }
 
@@ -25,7 +25,7 @@ interface Sprites {
 export interface PokemonFetchData {
     cries: PokemonCries;
     sprites: Sprites
-    name: string;
+    name: string | null;
     image: string;
     stats: PokemonStatFetch[];
     types: PokemonType[];
@@ -33,9 +33,9 @@ export interface PokemonFetchData {
 }
 
 export interface PokemonDetails {
-    cries: string;
+    cries: string | null;
     name: string;
-    image: string;
+    image: string | null;
     stats: PokemonStat[];
     types: string[];
     weight: number;

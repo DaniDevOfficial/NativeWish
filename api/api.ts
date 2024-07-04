@@ -28,7 +28,7 @@ function formatData(data: PokemonFetchData) {
             statValue: stat.base_stat
         })),
         types: data.types.map(type => capitalizeFirstLetter(type.type.name)),
-        cries: data.cries.legacy
+        cries: data.cries.latest
     };
     return formattedData;
 }

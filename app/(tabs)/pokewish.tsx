@@ -9,19 +9,19 @@ import { PokeImage } from '@/components/selfmade/PokeImage';
 
 export default function TabTwoScreen() {
   const [PokeData, setPokeData] = useState<PokemonDetails | null>(null);
-  async function fetching() {
-    const randInt = Math.floor(Math.random() * 898) + 1;
-    const pokeDataTMP: PokemonDetails = await fetchPokemonByNumber(randInt)
-    console.log(randInt)
-    console.log(pokeDataTMP)
-    setPokeData(pokeDataTMP)
-  }
   useEffect(() => {
+    async function fetching() {
+      const randInt = Math.floor(Math.random() * 898) + 1;
+      const pokeDataTMP: PokemonDetails = await fetchPokemonByNumber(randInt)
+      console.log(randInt)
+      console.log(pokeDataTMP)
+      setPokeData(pokeDataTMP)
+    }
     fetching()
+
   }, [])
-   
   return (
-    <>
+    <> 
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <ThemedText type="title">{PokeData?.name}</ThemedText>
         <PokeImage imageUri={PokeData?.image} soundUri={PokeData?.cries} />
