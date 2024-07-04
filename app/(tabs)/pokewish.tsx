@@ -6,12 +6,13 @@ import { PokemonType } from '@/components/selfmade/PokemonType';
 import { ThemedText } from '@/components/ThemedText';
 import { PokeImage } from '@/components/selfmade/PokeImage';
 import { PokeStat } from '@/components/selfmade/PokeStats';
+import { Accelerometer } from 'expo-sensors';
 
 export default function TabTwoScreen() {
   const [PokeData, setPokeData] = useState<PokemonDetails | null>(null);
 
   async function fetching() {
-    Vibration.vibrate(59);  // Custom vibration pattern
+    Vibration.vibrate(69); // nice  
     const randInt = Math.floor(Math.random() * 898) + 1;
     const pokeDataTMP: PokemonDetails = await fetchPokemonByNumber(randInt);
     console.log(randInt);
@@ -21,8 +22,21 @@ export default function TabTwoScreen() {
 
   useEffect(() => {
     fetching();
+
+    Accelerometer.setUpdateInterval(1000); 
+
+    const subscription = Accelerometer.addListener(({ x, y, z }) => {
+      if (Math.abs(x) > 1.5 || Math.abs(y) > 1.5 || Math.abs(z) > 1.5) {
+        fetching();
+      }
+    });
+  
+    return () => subscription && subscription.remove();
   }, []);
 
+
+
+  
   return (
     <View style={styles.container}>
       <ThemedText type="title" style={styles.title}>
