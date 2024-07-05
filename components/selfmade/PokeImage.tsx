@@ -14,7 +14,7 @@ export function PokeImage({ imageUri, soundUri }: PokeImageProps) {
   const [sound, setSound] = useState<Audio.Sound | null>(null);
 
   async function playSound(uri: string) {
-    const { sound } = await Audio.Sound.createAsync({ uri });
+    const { sound } = await Audio.Sound.createAsync({ uri }); // ChatGPT ty
     setSound(sound);
     await sound.playAsync();
   }

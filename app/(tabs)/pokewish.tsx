@@ -22,9 +22,7 @@ export default function TabTwoScreen() {
 
   useEffect(() => {
     fetching();
-
-    Accelerometer.setUpdateInterval(1000); 
-
+    Accelerometer.setUpdateInterval(100); 
     const subscription = Accelerometer.addListener(({ x, y, z }) => {
       if (Math.abs(x) > 1.5 || Math.abs(y) > 1.5 || Math.abs(z) > 1.5) {
         fetching();

@@ -5,6 +5,7 @@ type TypeColors = {
     [key: string]: string;
 };
 
+// ChatGPT for the colors
 const TypeColors: TypeColors = {
     Bug: '#A8B820',
     Dark: '#705848',
@@ -38,14 +39,14 @@ export function PokemonType({ type }: { type: string }) {
     return (
         <View>
             <Text style={{
-                color: TextColor,
+                color: TextColor, // Some styling with ChatGPT cuz i am a web dev
                 backgroundColor: color,
                 padding: 8,
                 margin: 4,
                 borderRadius: 12, 
                 textAlign: 'center', 
                 fontWeight: 'bold', 
-                overflow: 'hidden' // Ensure text does not spill over
+                overflow: 'hidden' 
             }}>
                 {type}
             </Text>

@@ -5,6 +5,8 @@ type PokeStatProps = {
     name: string;
     value: number;
 };
+
+// ChatGPT for the colors
 const statColors: { [key: string]: string } = {
     Hp: '#FF5959',
     Attack: '#F5AC78',
