@@ -21,11 +21,11 @@ export default function HomeScreen() {
         </ThemedText>
         <ThemedView style={styles.stepContainer}>
           <ThemedText type="title">Step 1</ThemedText>
-          <ThemedText>Click on the Pokémons tab to view the list of Pokémons.</ThemedText>
+          <ThemedText>Click on the Pokémons tab to see the Pokémons.</ThemedText>
         </ThemedView>
         <ThemedView style={styles.stepContainer}>
           <ThemedText type="title">Step 2</ThemedText>
-          <ThemedText>Look at the Pokémon.</ThemedText>
+          <ThemedText>Look at the random Pokémon.</ThemedText>
         </ThemedView>
         <ThemedView style={styles.stepContainer}>
           <ThemedText type="title">Step 3</ThemedText>

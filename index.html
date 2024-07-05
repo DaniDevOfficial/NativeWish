@@ -28,7 +28,7 @@
             color: #666;
         }
         .download-button {
-            background-color: #4CAF50;
+            background-color: #6acbe8;
             color: white;
             padding: 15px 30px;
             text-decoration: none;
@@ -38,7 +38,18 @@
             margin-top: 20px;
         }
         .download-button:hover {
-            background-color: #45a049;
+            background-color: #35bbd9;
+        }
+        .app-images {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .app-images img {
+            height: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -46,6 +57,11 @@
     <div class="container">
         <h1>Pokewish 📱</h1>
         <p>Make your Pokédex Wishes come true with PokéWish! Download the app now and start your magical journey.</p>
+        <div class="app-images">
+            <img src="./assets/images/poke1.jpg" alt="App Screenshot 1">
+            <img src="./assets/images/poke2.jpg" alt="App Screenshot 2">
+            <img src="./assets/images/poke3.jpg" alt="App Screenshot 3">
+        </div>
         <a class="download-button" href="https://expo.dev/artifacts/eas/673TUSW8Ukbg5gpA3SWDPS.apk">Download Now</a>
     </div>
 </body>
