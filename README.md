@@ -222,6 +222,7 @@ I created relatively atomatic commits inwich each one is only one main thing hap
 
 ![Website](./assets/Readme/commits.png)
 
+(with help of ChatGPT)
 
 ## Reflection
 
